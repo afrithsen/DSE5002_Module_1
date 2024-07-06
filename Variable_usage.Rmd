@@ -59,7 +59,10 @@ Ask yourself, what type or class of variable do I think the above variables
 are?
 
 Type your answers into the file here:
-
+a = numeric
+b = numeric
+c = character
+d = logical
 
 
 We can find out using the class() function
@@ -166,7 +169,9 @@ Enter some code to figure out what is in list_c and what type it is.
 Is there one function that will do this for you?
 
 ```{R}
-
+list_c
+class(list_c)
+str(list_c)
 ```
 
 #Creating lists of arrays
@@ -218,7 +223,7 @@ Action required
 Write code below to extract the 3rd item in list b
 
 ```{R}
-
+list_b[3]
 ```
 
 We can extract several items at once
@@ -272,7 +277,8 @@ The any command checks to see if any of the items in a list meet the condition
 ```{R}
 
 any((list_a==9))
-
+all((list_a ==9))
+all((list_a <=10))
 ```
  What do you think all() will do?
  
@@ -281,7 +287,9 @@ any((list_a==9))
  Find a condition that gives you a TRUE and another one that gives you a false
  
 ```{R}
-
+list_b
+any((list_b==4))
+any((list_b==9))
 ```
 
 Use the help function to look up the which() function
@@ -291,6 +299,7 @@ What does it do?
 Try using it and a test condition on list_a
 
 ```{R}
+which(list_a >5)
 
 ```
 
@@ -309,7 +318,7 @@ What will sum( c(1,2,3,3,4)>2.1)  give us?
 Predict the value, then try it
 
 ```{R}
-
+sum(c(1, 2, 3, 3, 4) > 2.1)
 ```
 
 #Sorting and ordering
@@ -334,10 +343,15 @@ This is done with the order() function which will provide an index of the
 array in sorted order
 
 ```{R}
-list_k=c("a","q","x",4)
+list_k=c("a","q","x",4, 20, 500, 03000)
 index_k=order(list_k,decreasing=FALSE)
 list_k[index_k]
 
+index_k1=order(list_k, decreasing = TRUE)
+list_k[index_k1]
+
+index_k
+?order
 ```
 
 
